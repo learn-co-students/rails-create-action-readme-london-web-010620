@@ -40,3 +40,57 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/" for ::1 at 2020-02-02 11:50:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/georgeapetrei/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/georgeapetrei/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (16.7ms)
+Completed 200 OK in 118ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-02 11:50:21 +0000
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 615ms (Views: 588.6ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-02 11:50:29 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dNKTQi4FC3lEyN+nGS9JsNQC8JfdFYXT9mV8Jv2Putghn2Z529vpd4QbAIAT90oMZuZvInBJqi/klosCMXcU8A==", "title"=>"New Article", "description"=>"new post", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "New Article"], ["description", "new post"], ["created_at", "2020-02-02 11:50:29.110952"], ["updated_at", "2020-02-02 11:50:29.110952"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 116ms (ActiveRecord: 3.9ms)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for ::1 at 2020-02-02 11:55:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 314ms (Views: 291.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-02 11:56:10 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lsyBWT4/0djF+lVQkJfa8qbpz1GE81pc5uuNwStZBg/DgXRiy+Ez1gUpineaT9lOFA1Q5CmvdaD0GHrl56GoJw==", "title"=>"Home", "description"=>"when i was home i was home and never left home , now i'm home and trying to leave my home as no one wants to stay home", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Home"], ["description", "when i was home i was home and never left home , now i'm home and trying to leave my home as no one wants to stay home"], ["created_at", "2020-02-02 11:56:10.467907"], ["updated_at", "2020-02-02 11:56:10.467907"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 11ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/posts/3" for ::1 at 2020-02-02 11:56:10 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 82ms (Views: 73.4ms | ActiveRecord: 0.3ms)
+
+
